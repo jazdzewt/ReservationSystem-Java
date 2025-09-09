@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Reservation System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="date"] {
+            padding: 8px;
+            margin: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="/login">Admin Login</a>
+</div>
+
+<div class="container">
+    <h1>Reserve Your Table</h1>
+    <form method="post" action="/reserve">
+        <input type="date" name="date" required>
+        <br>
+        <button type="submit">Reserve a Table</button>
+    </form>
+</div>
+</body>
+</html>
