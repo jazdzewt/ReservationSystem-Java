@@ -15,12 +15,6 @@ public class AdminService {
         this.adminRepository = adminRepository;
     }
 
-    public boolean authenticate(String username, String rawPassword) {
-        return adminRepository.findByUsername(username)
-                .map(admin -> passwordEncoder.matches(rawPassword, admin.getPassword()))
-                .orElse(false);
-    }
-
     public void registerAdmin(String username, String rawPassword) {
         String hashed = passwordEncoder.encode(rawPassword);
         Admin admin = new Admin(username, hashed);
